@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Achievements</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .main-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .main-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .main-header .tagline {
+      font-size: 18px;
+    }
+
+    .achievement-section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .achievement-section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .achievement-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .achievement-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #5a5a5a;
+    }
+
+    .achievement-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background-color: #222;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .main-header h1 {
+        font-size: 26px;
+      }
+      .main-header .tagline {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>Club Achievements</h1>
+    <p class="tagline">Celebrating Our Success Stories</p>
+  </header>
+
+  <main class="achievement-section">
+
+    <h2>Recent Highlights</h2>
+
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <h3>🏆 Web Development Club</h3>
+        <p>Winners of the National Intercollege Hackathon 2025 where the team built an AI-driven web app in 24 hours. Their innovative solution received mentorship offers from top tech startups.</p>
+      </div>
+
+      <div class="achievement-card">
+        <h3>📊 Data Science Club</h3>
+        <p>Champions of the Data Analytics Championship 2025 for creating a predictive stock market model. Their work was showcased at an international conference on data science innovation.</p>
+      </div>
+
+      <div class="achievement-card">
+        <h3>🤖 Robotics Club</h3>
+        <p>2nd place in the National Robotics Challenge 2025 with an autonomous delivery bot designed for last-mile logistics. The project attracted industry collaboration opportunities.</p>
+      </div>
+
+      <div class="achievement-card">
+        <h3>☁️ Cloud Computing Club</h3>
+        <p>Organized the state's largest Multi-Cloud Bootcamp with over 200 participants. The event featured hands-on labs on AWS, Azure, and GCP, gaining recognition from cloud leaders.</p>
+      </div>
+
+      <div class="achievement-card">
+        <h3>🤖 AI & ML Club</h3>
+        <p>Finalists at the AI Innovation Expo 2025 for their wearable health-monitoring device using real-time machine learning. The project is being considered for patenting and incubation.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management | Built by Students for Students</p>
+  </footer>
+
+</body>
+</html>

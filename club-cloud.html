@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Computing Club</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Cloud Computing Club</h1>
+  </header>
+
+  <main class="club-details">
+    <section class="club-info">
+      <h2>About the Cloud Computing Club</h2>
+      <p>The Cloud Computing Club focuses on educating students about cloud platforms like AWS, Microsoft Azure, and Google Cloud. Members learn how to deploy applications, manage cloud infrastructure, and explore trending topics such as containerization, microservices, and serverless computing.</p>
+
+      <p>Through workshops, certification prep sessions, and hands-on labs, students gain valuable exposure to the backbone technologies that power modern businesses. Whether you're new to cloud or looking to deepen your expertise, this club welcomes all technology enthusiasts.</p>
+
+      <h3>Teacher In-Charge:</h3>
+      <p>Prof. A. Kapoor (Department of Information Technology)</p>
+
+      <h3>Venue & Timings:</h3>
+      <p>Cloud Lab 108, IT Block<br>
+      Every Tuesday — 3:30 PM to 5:30 PM</p>
+      
+    </section>
+  </main>
+
+  <div id="joinFormModal" class="modal">
+    <div class="modal-content">
+      <h2>Join Cloud Computing Club</h2>
+      <form id="joinForm" class="join-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        <label for="experience">Previous Experience (if any):</label>
+        <textarea id="experience" name="experience" placeholder="Briefly describe your experience"></textarea>
+
+        <label for="reason">Why would you like to join?</label>
+        <textarea id="reason" name="reason" placeholder="Tell us why you're interested" required></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

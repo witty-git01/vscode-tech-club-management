@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Science Club</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Data Science Club</h1>
+  </header>
+
+  <main class="club-details">
+    <section class="club-info">
+      <h2>About the Data Science Club</h2>
+      <p>The Data Science Club helps students dive deep into the world of data analysis, machine learning, and artificial intelligence using Python, R, and cutting-edge tools. Members work on real-world datasets and build predictive models while learning essential statistics and visualization techniques.</p>
+
+      <p>The club focuses on both theoretical foundations and practical applications, including data wrangling, model building, and working with big data platforms. Members regularly take part in Kaggle competitions, hands-on coding sessions, and collaborative projects.</p>
+
+      <h3>Teacher In-Charge:</h3>
+      <p>Prof. S. Mehta (Department of Computer Science & Engineering)</p>
+
+      <h3>Venue & Timings:</h3>
+      <p>Lab 105, Main Block<br>
+      Every Tuesday & Friday — 3:30 PM to 5:30 PM</p>
+
+    </section>
+  </main>
+
+  <div id="joinFormModal" class="modal">
+    <div class="modal-content">
+      <h2>Join Data Science Club</h2>
+      <form id="joinForm" class="join-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        <label for="experience">Previous Experience (if any):</label>
+        <textarea id="experience" name="experience" placeholder="Briefly describe your experience"></textarea>
+
+        <label for="reason">Why would you like to join?</label>
+        <textarea id="reason" name="reason" placeholder="Tell us why you're interested" required></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

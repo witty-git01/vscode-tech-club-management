@@ -1,0 +1,245 @@
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    background-color: #334155;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    position: relative;
+}
+
+nav li button {
+    background-color: #334155;
+    border: none;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav li button:hover {
+    background-color: #475569;
+}
+
+nav li a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+nav li a:hover {
+    background-color: #475569;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.club-details {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.club-info h2 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+.club-info p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.join-btn {
+  background-color: #1e40af;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background-color: #2563eb;
+}
+
+.modal-content {
+  background-color: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.join-form label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+.join-form input, .join-form select, .join-form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.join-form button.submit-btn {
+  background-color: #0284c7;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.join-form button.submit-btn:hover {
+  background-color: #0ea5e9;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.main-header .tagline {
+  font-size: 1.2rem;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+nav ul {
+  background-color: #1e293b;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav li {
+  position: relative;
+  margin: 0;
+}
+
+nav li button, nav li a {
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 14px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+nav li button:hover, nav li a:hover {
+  background-color: #475569;
+  transition: background-color 0.3s ease;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.hero img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #1e293b;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 10px auto 20px auto;
+  font-size: 1rem;
+  color: #555;
+}
+
+.hero-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.hero-btn:hover {
+  background-color: #1e40af;
+  transition: background-color 0.3s ease;
+}
+
+footer {
+  background-color: #1e293b;
+  color: #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.image-gallery img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}

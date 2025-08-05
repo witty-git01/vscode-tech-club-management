@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Development Club</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Web Development Club</h1>
+  </header>
+
+  <main class="club-details">
+    <section class="club-info">
+      <h2>About the Web Development Club</h2>
+      <p>The Web Development Club brings together students passionate about building modern, responsive, and interactive websites using the latest technologies like HTML, CSS, JavaScript, and popular frameworks. We conduct weekly sessions, hands-on workshops, and mini hackathons to strengthen practical coding skills.</p>
+
+      <p>In addition to web design fundamentals, the club focuses on real-world web app development, user experience (UX), performance optimization, and even a bit of backend with Node.js and APIs. No matter your skill level—beginner or advanced—you’ll find opportunities to learn, collaborate, and create.</p>
+
+      <h3>Teacher In-Charge:</h3>
+      <p>Prof. R. Sharma (Department of Computer Science)</p>
+
+      <h3>Venue & Timings:</h3>
+      <p>Lab 203, Computer Science Block<br>
+      Every Monday & Thursday — 4:00 PM to 6:00 PM</p>
+
+    </section>
+  </main>
+
+  <div id="joinFormModal" class="modal">
+    <div class="modal-content">
+      <h2>Join Web Development Club</h2>
+      <form id="joinForm" class="join-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        <label for="experience">Previous Experience (if any):</label>
+        <textarea id="experience" name="experience" placeholder="Briefly describe your experience"></textarea>
+
+        <label for="reason">Why would you like to join?</label>
+        <textarea id="reason" name="reason" placeholder="Tell us why you're interested" required></textarea>
+
+        <input type="hidden" name="club" value="Web Development">
+
+        <button type="submit" class="submit-btn">Submit</button>
+        <p id="responseMessage" style="margin-top: 10px; font-weight: bold;"></p>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script>
+    function openJoinForm() {
+      document.getElementById('joinFormModal').style.display = 'block';
+    }
+
+    function closeJoinForm() {
+      document.getElementById('joinFormModal').style.display = 'none';
+    }
+
+    document.getElementById('joinForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = {
+        name: formData.get('name'),
+        year: formData.get('year'),
+        experience: formData.get('experience'),
+        reason: formData.get('reason'),
+        club: formData.get('club')
+      };
+
+      fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(result => {
+        document.getElementById('responseMessage').innerText = result.message;
+        this.reset();  // Clear form
+      })
+      .catch(error => {
+        document.getElementById('responseMessage').innerText = 'Error submitting form.';
+      });
+    });
+  </script>
+<script>
+document.getElementById('joinForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = {
+    name: formData.get('name'),
+    year: formData.get('year'),
+    experience: formData.get('experience'),
+    reason: formData.get('reason'),
+    club: formData.get('club')
+  };
+
+  fetch('http://127.0.0.1:5000/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    document.getElementById('responseMessage').innerText = result.message;
+  })
+  .catch(error => {
+    document.getElementById('responseMessage').innerText = 'Error submitting form.';
+  });
+});
+</script>
+
+</body>
+</html>

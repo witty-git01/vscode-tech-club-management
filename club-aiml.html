@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI and ML Club</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>AI and ML Club</h1>
+  </header>
+
+  <main class="club-details">
+    <section class="club-info">
+      <h2>About the AI & ML Club</h2>
+      <p>The Artificial Intelligence and Machine Learning Club is dedicated to exploring cutting-edge AI and ML concepts, including deep learning, computer vision, natural language processing, and more. The club organizes regular coding sessions, workshops, and AI model building competitions.</p>
+
+      <p>Students work on practical projects using Python, TensorFlow, and other modern libraries to gain hands-on exposure to real-world machine learning problems. The club fosters innovation, creativity, and collaboration to prepare students for the rapidly evolving AI industry.</p>
+
+      <h3>Teacher In-Charge:</h3>
+      <p>Dr. N. Verma (Department of Computer Science & AI)</p>
+
+      <h3>Venue & Timings:</h3>
+      <p>AI Lab 302, Innovation Block<br>
+      Every Wednesday & Saturday — 2:00 PM to 4:00 PM</p>
+
+    </section>
+  </main>
+
+  <div id="joinFormModal" class="modal">
+    <div class="modal-content">
+      <h2>Join AI & ML Club</h2>
+      <form id="joinForm" class="join-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+        <label for="year">Year of Study:</label>
+        <select id="year" name="year" required>
+          <option value="">-- Select Year --</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+
+        <label for="experience">Previous Experience (if any):</label>
+        <textarea id="experience" name="experience" placeholder="Briefly describe your experience"></textarea>
+
+        <label for="reason">Why would you like to join?</label>
+        <textarea id="reason" name="reason" placeholder="Tell us why you're interested" required></textarea>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

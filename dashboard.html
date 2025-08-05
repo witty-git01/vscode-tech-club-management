@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-header {
+      background-color: #4caf50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .empty-state {
+      color: #777;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>Student Dashboard</h1>
+  </header>
+
+  <main class="dashboard">
+
+    <section>
+      <h2>Registered Students</h2>
+      <div id="registrations-list" class="card-container">
+        <p class="empty-state">Loading registrations...</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Upcoming Events</h2>
+      <div id="events-list" class="card-container">
+        <p class="empty-state">Loading events...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+      fetch('http://127.0.0.1:5000/registrations')
+        .then(response => response.json())
+        .then(data => {
+          const regContainer = document.getElementById('registrations-list');
+          regContainer.innerHTML = '';
+
+          if (data.registrations.length === 0) {
+            regContainer.innerHTML = '<p class="empty-state">No student registrations yet 🚀</p>';
+          } else {
+            data.registrations.forEach(reg => {
+              const card = `<div class="card">
+                              <strong>${reg.name}</strong><br>
+                              Year: ${reg.year}<br>
+                              Club: ${reg.club}
+                            </div>`;
+              regContainer.innerHTML += card;
+            });
+          }
+        });
+
+      fetch('http://127.0.0.1:5000/events')
+        .then(response => response.json())
+        .then(data => {
+          const eventContainer = document.getElementById('events-list');
+          eventContainer.innerHTML = '';
+
+          if (data.events.length === 0) {
+            eventContainer.innerHTML = '<p class="empty-state">No events have been added yet 📅</p>';
+          } else {
+            data.events.forEach(evt => {
+              const card = `<div class="card">
+                              <strong>${evt.event_name}</strong><br>
+                              Club: ${evt.club}<br>
+                              ${evt.date} | ${evt.time}<br>
+                              Room: ${evt.room_no}
+                            </div>`;
+              eventContainer.innerHTML += card;
+            });
+          }
+        });
+    }
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>Admin Portal</h1>
+  </header>
+
+  <main class="admin-panel">
+
+    <section class="admin-form">
+      <h2>Create New Event</h2>
+      <form id="eventForm">
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="club">Select Club:</label>
+          <select id="club" required style="width: 250px; padding: 8px; font-size: 15px;">
+            <option value="">-- Select Club --</option>
+            <option>Web Development</option>
+            <option>Data Science</option>
+            <option>AI & ML</option>
+            <option>Robotics</option>
+            <option>Cloud Computing</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="event-title">Event Title:</label>
+          <input type="text" id="event-title" placeholder="e.g. AI Bootcamp" required style="width: 250px; padding: 8px; font-size: 15px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="event-date">Date:</label>
+          <input type="date" id="event-date" required style="width: 250px; padding: 8px; font-size: 15px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="event-time">Time:</label>
+          <input type="time" id="event-time" required style="width: 250px; padding: 8px; font-size: 15px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="event-room">Room No.:</label>
+          <input type="text" id="event-room" placeholder="e.g. Lab 203" required style="width: 250px; padding: 8px; font-size: 15px;">
+        </div>
+
+        <button type="submit" class="submit-btn">Add Event</button>
+      </form>
+    </section>
+
+    <section class="admin-events">
+      <h2>Upcoming Events (Demo Display)</h2>
+      <ul>
+        <li><strong>Web Dev Hackathon</strong> - 12/07/2025 - Room 101</li>
+        <li><strong>Data Science Workshop</strong> - 15/07/2025 - Room 301</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Technical Club Management</p>
+  </footer>
+
+  <script>
+    document.getElementById('eventForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const club = document.getElementById('club').value;
+      const event_name = document.getElementById('event-title').value;
+      const date = document.getElementById('event-date').value;
+      const time = document.getElementById('event-time').value;
+      const room_no = document.getElementById('event-room').value;
+
+      const eventData = {
+        club,
+        event_name,
+        room_no,
+        date,
+        time
+      };
+
+      fetch('http://127.0.0.1:5000/create-event', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('✅ Event added successfully!');
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('❌ Error adding event. Make sure Flask is running on port 5000.');
+      });
+    });
+  </script>
+
+</body>
+</html>
